@@ -202,15 +202,6 @@ CONFIG = {
 
 If you use LTO in your research, please cite:
 
-```bibtex
-@misc{lto2024,
-  title={Latent Thinking Optimization: Optimizing Code Generation via Latent Reward Models},
-  author={Your Name},
-  year={2024},
-  note={Clark Summer Research Program}
-}
-```
-
 ## Acknowledgements
 
 This research and software pipeline was developed as part of the **Clark Summer Research Program**. We gratefully acknowledge the open-source ML community and the models used (DeepSeek, Qwen). Some parts of the code have been written by ninglab. 
