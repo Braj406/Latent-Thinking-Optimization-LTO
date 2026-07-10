@@ -11,7 +11,7 @@ drive.mount('/content/drive', force_remount=True)
 sys.path.append('/content/drive/MyDrive/Latent Thinking Optimization/Qwen Model')
 
 # 2. Import the metric from your newly refactored repo
-from metrics import calculate_pass_at_k
+from pass_k import calculate_pass_at_k
 
 # 3. Define Paths
 humaneval_path = '/content/drive/MyDrive/chumaneval_lto_dataset_qwenpt'
@@ -28,9 +28,7 @@ except Exception as e:
     combined_data = []
 
 if combined_data:
-    # ==========================================
     # EVALUATION HELPER FUNCTION
-    # ==========================================
     def run_evaluation(data_subset, report_title):
         task_results = defaultdict(list)
         for item in data_subset:
@@ -62,15 +60,12 @@ if combined_data:
             if pass_at_k_scores[k]:
                 print(f"  Pass@{k}: {np.mean(pass_at_k_scores[k]) * 100:.2f}%")
         print("═" * 60)
-
-    # ==========================================
+        
     # RUN 1: MASTER EVALUATION (ALL DATA)
-    # ==========================================
     run_evaluation(combined_data, "MASTER PASS@K METRICS on Qwen Trajectories")
 
-    # ==========================================
+
     # RUN 2: TEST SET EVALUATION (15% SPLIT)
-    # ==========================================
     all_task_ids = [str(item['task_id']) for item in combined_data]
     unique_task_ids = sorted(list(set(all_task_ids)))
 
