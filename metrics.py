@@ -158,6 +158,7 @@ def calculate_intrinsic_dimension(layer_representations, trimming_factor=0.1):
         # Return the final calculated intrinsic dimension
         return intrinsic_dimension_estimate
 
+# Need to import math
 def calculate_pass_at_k(n, c, k):
     """
     Calculates the Pass@k metric for code generation trajectories.
